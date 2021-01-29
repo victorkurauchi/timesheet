@@ -12,6 +12,15 @@ Nodejs CLI to automate timesheet reports for contractors
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
+
+# Development
+
+`./bin/run --name "Victor [5229]" --project "FWT [250]"`
+
+# Testing
+
+`npm test`
+
 # Usage
 <!-- usage -->
 ```sh-session
