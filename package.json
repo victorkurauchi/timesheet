@@ -1,0 +1,56 @@
+{
+  "name": "timesheet",
+  "description": "Nodejs CLI to automate timesheet reports for contractors",
+  "version": "0.0.1",
+  "author": "victorkurauchi@gmail.com",
+  "bin": {
+    "timesheet": "./bin/run"
+  },
+  "bugs": "https://github.com/victorkurauchi/timesheet/issues",
+  "dependencies": {
+    "@oclif/command": "^1.8.0",
+    "@oclif/config": "^1.17.0",
+    "@oclif/plugin-help": "^3.2.1",
+    "csv": "^5.3.2",
+    "csv-generate": "^3.3.0",
+    "tslib": "^1.14.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-typescript": "^7.12.7",
+    "@oclif/dev-cli": "^1.26.0",
+    "@types/jest": "^26.0.20",
+    "@types/node": "^10.17.51",
+    "babel-jest": "^26.6.3",
+    "eslint": "^5.16.0",
+    "eslint-config-oclif": "^3.1.0",
+    "eslint-config-oclif-typescript": "^0.1.0",
+    "jest": "^26.6.3",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib"
+  ],
+  "homepage": "https://github.com/victorkurauchi/timesheet",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "oclif": {
+    "bin": "timesheet"
+  },
+  "repository": "victorkurauchi/timesheet",
+  "scripts": {
+    "prepack": "rm -rf lib && tsc -b && oclif-dev readme",
+    "test": "jest",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "types": "lib/index.d.ts"
+}
