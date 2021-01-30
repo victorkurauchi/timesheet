@@ -13,15 +13,20 @@ Nodejs CLI to automate timesheet reports for contractors
 * [Commands](#commands)
 <!-- tocstop -->
 
-# Development
+### Development usage
 
-`./bin/run --name "Victor [5229]" --project "FWT [250]"`
+`./bin/run`
 
-# Testing
+Provide your name and your project when prompted:
+
+- Victor [5229] 
+- FWT [250]
+
+### Testing
 
 `npm test`
 
-# Usage
+### Usage
 <!-- usage -->
 ```sh-session
 $ npm install -g timesheet
@@ -35,7 +40,14 @@ USAGE
 ...
 ```
 <!-- usagestop -->
-# Commands
+### Commands
 <!-- commands -->
 
 <!-- commandsstop -->
+
+
+### To do:
+
+- save name and project locally so user doesn't need to provide details every time
+- show amount of hours per day ?
+- option to set description for each day a

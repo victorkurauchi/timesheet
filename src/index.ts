@@ -1,8 +1,10 @@
 import {Command, flags} from '@oclif/command'
-import {getMonday, getMondayToFridayDates} from './handle-week-date'
+import cli from 'cli-ux'
+import {getMondayToFridayDates} from './handle-week-date'
 import {generateCsvFromArray} from './csv-generator'
 import {TimesheetOutputInterface} from './interfaces/timesheet'
 import {formatLine} from './format-output'
+import * as chalk from 'chalk'
 
 class Timesheet extends Command {
   static description =
@@ -28,8 +30,14 @@ class Timesheet extends Command {
   static args = [{name: 'file'}]
 
   async run() {
+    this.log(chalk.blue('Hi there, I will need only a few details from you in order to proceed with the .csv'))
+    const name = await cli.prompt('What is your name?')
+    // save to file for future
+    const project = await cli.prompt('What is the project ? (i.e FWT [250]) ')
+    // save to file for future
+
     const {args, flags} = this.parse(Timesheet)
-    const {project, name} = flags
+    // const {project, name} = flags
 
     this.log(`Generate .csv for ${name} in the project ${project}`)
     // this.log(getMondayToFridayDates().join('  \n'))
