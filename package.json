@@ -14,6 +14,7 @@
     "chalk": "^4.1.0",
     "csv": "^5.3.2",
     "csv-generate": "^3.3.0",
+    "sqlite3": "^5.0.1",
     "tslib": "^1.14.1"
   },
   "devDependencies": {
