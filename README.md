@@ -48,6 +48,8 @@ USAGE
 
 ### To do:
 
-- save name and project locally so user doesn't need to provide details every time
-- show amount of hours per day ?
-- option to set description for each day a
+- [x] save name and project locally so user doesn't need to provide details every time
+- [ ] option to re-save the project and name
+- [ ] save file in a better format than output.csv (ie `feb-01-to-05.csv`)
+- [ ] show amount of hours per day ?
+- [ ] option to set description for each day a
