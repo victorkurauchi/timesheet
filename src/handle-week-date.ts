@@ -13,6 +13,8 @@ export const getMondayToFridayDates = (currentDate?: Date): string[] => {
   array.forEach(element => {
     const newDate = new Date()
     newDate.setDate(monday.getDate() + (element + 1))
+    newDate.setMonth(monday.getMonth())
+    newDate.setFullYear(monday.getFullYear())
     remaining.push(newDate.toString())
   })
   return [monday.toString(), ...remaining]

@@ -6,7 +6,7 @@ describe('handle week dates', () => {
       const response = getMondayToFridayDates()
 
       expect(response).toHaveLength(5)
-      console.log(response)
+      // console.log(response)
     })
 
     test('when provided specific date, function should return dates for the specific week from monday to friday', () => {
@@ -17,6 +17,7 @@ describe('handle week dates', () => {
 
       const response = getMondayToFridayDates(custom)
 
+      console.log(response)
       expect(response).toHaveLength(5)
 
       const monday = new Date(response[0])
@@ -24,7 +25,6 @@ describe('handle week dates', () => {
 
       expect(monday.getDay()).toBe(1)
       expect(friday.getDay()).toBe(5)
-      console.log(response)
     })
   })
 })
