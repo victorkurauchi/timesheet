@@ -3,7 +3,7 @@ import cli from 'cli-ux'
 import {getMondayToFridayDates} from './handle-week-date'
 import {generateCsvFromArray} from './csv-generator'
 import {TimesheetOutputInterface} from './interfaces/timesheet'
-import {formatLine} from './format-output'
+import {formatLine, getFilename} from './format-output'
 import * as chalk from 'chalk'
 import { DatabaseClient } from './database'
 import { SettingsRepository } from './repository/settings.repository'
@@ -65,7 +65,10 @@ class Timesheet extends Command {
     this.log(`Generate .csv for ${user} in the project ${project}`)
     // this.log(getMondayToFridayDates().join('  \n'))
 
-    const data = getMondayToFridayDates().map(element => {
+    const weekdates = getMondayToFridayDates()
+    const filename = getFilename(weekdates[0], weekdates[weekdates.length-1])
+
+    const data = weekdates.map(element => {
       return formatLine({
         // @ts-ignore
         project,
@@ -76,7 +79,7 @@ class Timesheet extends Command {
       })
     })
 
-    const output = args.name || './output.csv'
+    const output = args.name || `./${filename}`
     generateCsvFromArray(data, output)
   }
 }
